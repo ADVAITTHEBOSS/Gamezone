@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <title>  </title>
+        <style>
+            #container{
+                width: 70%;
+                height: 399px;
+                margin: auto;
+            
+                background-image: url(PS5.jpg);
+                background-size: 100% 100%;
+                transition: all 4s;
+                position: relative;
+            }
+            #dots{
+                position: absolute;
+                bottom: 10px;
+                left: 45%;
+            }
+            body{
+                background-color: rgb(17, 16, 16);
+                color: white;
+            }
+            p{
+                text-align: center;
+            }
+            .GameZone{
+                position: relative;
+                left: 22.5%;
+            }
+            #navbar ul{ 
+                list-style:none;
+                margin : 0%;
+                padding : 0%;
+            }
+            #navbar ul li{
+                float: left;
+                padding-right: 20px;
+                padding-left: 20px;
+                color: white;
+                font-size: x-large;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            #navbar{
+                background-color:rgb(26, 19, 19);
+                height: 40px;
+                border-radius: 40px;
+            }
+            #navbar{
+                line-height: 60px;
+                height: 60px;
+            }
+            #navbar ul li:hover{               
+                background-color: red;
+                font-size: xx-large;
+            }  
+            .div{
+                text-align: center;
+            }
+            .img{
+                height: 100px;
+                margin: 20px;
+            }
+            #loader{
+
+width: 120px;
+height: 120px;
+border: black 20px solid;
+border-top: cyan 20px solid;
+border-radius: 50%;
+
+animation-name: loader;
+animation-duration: 1s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+
+position: absolute;
+top: 40%;
+left: 44%;
+}
+        #content{
+            display: none;
+            animation-name: animation;
+            animation-duration: 0.5s;
+            position: relative;
+        }
+
+@keyframes loader{
+0%{ transform: rotate(0deg);}
+100%{ transform: rotate(360deg);}
+}
+@keyframes animation{
+0%{ top: 50px; opacity: 0;}   
+100% { top:0px; opacity: 1;}
+}
+        </style>
+            </head>
+        <body onload="loader()">
+            <div id="loader"></div><br>
+
+            <div id="content">
+             <div  id="navbar">
+    <ul>
+        <a href="GameZone.html"> <li> Home </li></a>
+        <a href="GameZoneShop.Html"> <li> Shop </li></a>
+        <a href="GameZoneSignUp.html"> <li> Sign-Up </li></a>
+        <a href="GameZoneAboutUs.html"> <li> About Us </li></a>
+    </ul>
+    </div> <br> <br> <br>
+
+
+
+            <div id="container">   
+                <div id="dots">
+                    <input type="radio" name="dot" id="dot0" checked>
+                    <input type="radio" name="dot" id="dot1">
+                    <input type="radio" name="dot" id="dot2">
+                    <input type="radio" name="dot" id="dot3">
+                </div>
+            </div>
+            
+            <img class="GameZone" src="Screenshot_5.png" > <br> <br> <br>
+
+            <div class="div">
+                <img src="Screenshot_21.png" class="img"><img src="Screenshot_22.png" class="img"><img src="Screenshot_23.png" class="img"><img src="Screenshot_24.png" class="img">
+                </div>
+
+            </div>
+            <script>
+                var images = [ "PS5.jpg", "XBOX.jpg", "Controller1.jpg", "PS4C.jpg"] ;
+
+                var i = 0;
+
+                function change( )
+                {
+                    i++;
+                    if(i >= 4 ){  i = 0 ;  }
+                    document.getElementById("container").style.backgroundImage = "url(" + images[i] + ")" ;
+                    document.getElementById("dot" + i).checked = "checked" ;
+                }
+
+                setInterval( change, 5000) ;
+
+                function show() {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("content").style.display = "block";
+                }
+
+                function loader() 
+                {
+                    setTimeout(show, 3000) ;
+
+                }
+            </script>
+           
+
+        </body>
+
+
+</html>
